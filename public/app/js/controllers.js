@@ -1,4 +1,4 @@
-angular.module('AppCtrl', ['AppServices'])
+angular.module('AppCtrl', ['Services'])
 .controller('SignupCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
     $scope.user = {
         email: '',
@@ -24,7 +24,7 @@ angular.module('AppCtrl', ['AppServices'])
         Auth.saveToken(res.data.token);
         $state.go("home")
         }, function error(err) {
-            console.log("Yo dawg")
+            console.log("Yo dawg, user doesn't exist")
         })
         }
 }])

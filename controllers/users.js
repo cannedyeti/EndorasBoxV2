@@ -2,6 +2,8 @@ var express = require('express');
 var User = require('../models/user');
 var router = express.Router();
 
+console.log("connected to server")
+
 router.route('/')
   .get(function(req, res) {
     User.find(function(err, users) {

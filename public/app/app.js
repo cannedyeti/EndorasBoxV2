@@ -1,6 +1,6 @@
 console.log("app connected")
 
-var app = angular.module('App', ['ui.router']);
+var app = angular.module('App', ['ui.router', 'AppCtrl']);
 
 app.config([
     '$stateProvider',
@@ -13,6 +13,16 @@ app.config([
         .state('home', {
             url: '/',
             templateUrl: 'app/views/home.html',
+        })
+        .state('login', {
+            url: '/login',
+            templateUrl: 'app/views/login.html',
+            controller: 'LoginCtrl'
+        })
+        .state('signup', {
+            url: '/signup',
+            templateUrl: 'app/views/signup.html',
+            controller: 'SignupCtrl'
         })
         .state('404', {
             url: '/404',
